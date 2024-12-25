@@ -1,13 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Video Player</title>
+    <title>Your Portfolio</title>
+    <style>
+        h1 { text-align: center; }
+      .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+      .video-item {
+            flex: 0 0 33.33%;
+            padding: 5px;
+            text-align: center;
+        }
+      .video-item video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+        }
+      .video-description {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+      .video-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+      .video-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-    <video width="320" height="240" controls>
-        <source src="照片下落+運鏡.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <h1>AI技術生成(包含圖片、影片、音樂)</h1>
+    <div class="video-container">
+        <!-- 这里添加你的视频及描述，使用 JavaScript 动态生成 -->
+        <script>
+            const videos = [
+                ["剪映_下雪+初次音頻剪接.mp4", "剪映_下雪+初次音頻剪接"],
+                ["剪映_下雨+眨眼.mp4", "剪映_下雨+眨眼"],
+                ["下雨+詩詞.mp4", "下雨+詩詞"],
+                ["人物摳圖+背景牆.mp4", "人物摳圖加背景牆"],
+                ["照片下落+運鏡.mp4", "照片下落+運鏡"],
+                ["旅行.mp4", "旅行"],
+                ["貓meme_白登&哈哈&懂王的愛恨情仇.mp4", "貓meme_白登&哈哈&懂王的愛恨情仇"],
+                ["女特工+卡點.mp4", "女特工+卡點"],
+                ["夏日衝浪曲.mp4", "夏日衝浪曲"],
+                ["紀錄美好生活_花卉.mp4", "紀錄美好生活_花卉"],
+                ["DAILY.mp4", "DAILY"],
+                ["自拍集錦動畫.mp4", "自拍集錦動畫"],
+                ["電影開場_為夢想再出發.mp4", "電影開場_為夢想再出發"],
+                ["曲奇餅乾+數字人.mp4", "曲奇餅乾+數字人"],
+                ["數字人+紙張數據效果.mp4", "數字人+紙張數據效果"]
+				["數字人+介紹衣服.mp4", "數字人+介紹衣服"]
+            ];
+            videos.forEach(videoPair => {
+                const videoItem = document.createElement('div');
+                videoItem.className = 'video-item';
+                videoItem.innerHTML = `
+                    <table class="video-table">
+                        <tr>
+                            <td class="video-description">
+                                <div>${videoPair[0]}</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <video controls>
+                                    <source src="${videoPair[0]}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </td>
+                        </tr>
+                    </table>
+                `;
+                document.querySelector('.video-container').appendChild(videoItem);
+            });
+        </script>
+    </div>
 </body>
 </html>
