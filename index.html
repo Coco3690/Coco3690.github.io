@@ -2,14 +2,285 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WorkFlows</title>
+    <title>Your Portfolio</title>
+    <style>
+        h1 {
+            text-align: center; /* 使文字居中 */
+        }
+        /* 使用CSS来设置视频的布局 */
+     .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* 使视频项在容器中水平居中 */
+        }
+     .video-item {
+            flex: 0 0 33.33%; /* 每个视频项目占据一行的三分之一宽度 */
+            box-sizing: border-box;
+            padding: 5px;
+            text-align: center; /* 使视频描述文字居中 */
+        }
+     .video-item video {
+            width: 100%; /* 视频宽度占满视频项的容器 */
+            max-width: 100%; /* 限制视频的最大宽度为视频项的宽度 */
+            aspect-ratio: 16 / 9; /* 按照第一个视频的长宽比设置，这里假设第一个视频是16:9 */
+        }
+     .video-description {
+            margin-bottom: 5px; /* 给视频和描述之间添加一些下边距，使其有一定间距 */
+            font-weight: bold; /* 使描述文字加粗 */
+        }
+     .video-table {
+            width: 100%;
+            border-collapse: collapse; /* 使表格边框合并为一个单一的边框 */
+        }
+     .video-table td {
+            border: 1px solid #ccc; /* 为表格单元格添加边框 */
+            padding: 10px; /* 为单元格添加内边距 */
+        }
+    </style>
 </head>
 <body>
-    <h1>AI Technology</h1>
-    <video width="640" height="480" controls>
-        <source src="1280x768~藍星最強.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <h1>AI技術生成(包含圖片、影片、音樂)</h1>
+    <div class="video-container">
+        <!-- 这里添加你的视频及描述 -->
+        <div class="video-item">
+            <table class="video-table">
+                <tr>
+                    <td class="video-description">
+                        <div>剪映下雪与初次音频剪接</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="剪映_下雪+初次音頻剪接.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="video-item">
+            <table class="video-table">
+                <tr>
+                    <td class="video-description">
+                        <div>剪映下雨并带有眨眼效果</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="剪映_下雨+眨眼.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="video-item">
+            <table class="video-table">
+                <tr>
+                    <td class="video-description">
+                        <div>下雨并伴有诗词的视频</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="下雨+詩詞.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="video-item">
+            <table class="video-table">
+                <tr>
+                    <td class="video-description">
+                        <div>人物抠图加背景墙效果</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="人物摳圖+背景牆.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="video-item">
+            <table class="video-table">
+                <tr>
+                    <td class="video-description">
+                        <div>照片下落并带有运镜效果</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="照片下落+運鏡.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="video-item">
+            <table class="video-table">
+                <tr>
+                    <td class="video-description">
+                        <div>旅行主题的视频</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="旅行.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="video-item">
+            <table class="video-table">
+                <tr>
+                    <td class="video-description">
+                        <div>关于猫的Meme，白登、哈哈和懂王的爱恨情仇</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="貓meme_白登&哈哈&懂王的愛恨情仇.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="video-item">
+            <table class="video-table">
+                <tr>
+                    <td class="video-description">
+                        <div>女特工加卡点的视频</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="女特工+卡點.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="video-item">
+            <table class="video-table">
+                <tr>
+                    <td class="video-description">
+                        <div>夏日冲浪曲的视频</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="夏日冲浪曲.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="video-item">
+            <table class="video-table">
+                <tr>
+                    <td class="video-description">
+                        <div>记录美好生活中的花卉</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="紀錄美好生活_花卉.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="video-item">
+            <table class="video-table">
+                <tr>
+                    <td class="video-description">
+                        <div>日常记录的视频</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="DAILY.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="video-item">
+            <table class="video-table">
+                <tr>
+                    <td class="video-description">
+                        <div>自拍集锦的动画视频</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="自拍集錦動畫.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="video-item">
+            <table class="video-table">
+                <tr>
+                    <td class="video-description">
+                        <div>具有电影感片的片头，对酒当歌，带有破碎效果</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="電影感片頭_對酒當歌_破碎.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="video-item">
+            <table class="video-table">
+                <tr>
+                    <td class="video-description">
+                        <div>曲奇饼干加数字人的视频</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="曲奇餅乾+數字人.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- 根据需要添加更多视频及描述 -->
+    </div>
 </body>
 </html>
