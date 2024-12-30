@@ -1,84 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My project我的專案</title>
     <style>
-        h1 { text-align: center; }
-     .video-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
-     .video-item {
-            flex: 0 0 33.33%;
-            padding: 5px;
-            text-align: center;
-        }
-     .video-item video {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-        }
-     .video-description {
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-     .video-table {
-            width: 100%;
+        table {
+            width: 80%;
+            margin: 0 auto;
             border-collapse: collapse;
         }
-     .video-table td {
-            border: 1px solid #ccc;
-            padding: 10px;
+        td {
+            border: 1px solid black;
+            padding: 20px;
+        }
+        video {
+            max-width: 550px;
+            height: auto;
+            aspect-ratio: 16 / 9;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            font-weight: bold;
         }
     </style>
 </head>
+
 <body>
     <h1>AI技術生成(包含圖片、影片、音樂)</h1>
-    <div class="video-container">
-        <!-- 这里添加你的视频及描述，使用 JavaScript 动态生成 -->
-        <script>
-            const videos = [
-                ["剪映_下雪+初次音頻剪接.mp4", "下雪特效+初次的音頻剪接練習"],
-                ["剪映_下雨+眨眼.mp4", "下雨特效+眨眼效果"],
-                ["下雨+詩詞.mp4", "下雨特效+詩詞"],
-                ["人物摳圖+背景牆.mp4", "人物摳圖+背景牆"],
-                ["照片下落+運鏡.mp4", "照片下落+運鏡效果"],
-                ["旅行.mp4", "旅行的小集錦"],
-                ["貓meme_白登&哈哈&懂王的愛恨情仇.mp4", "貓meme_白登&哈哈&懂王的愛恨情仇"],
-                ["女特工+卡點.mp4", "女特工+卡點"],
-                ["夏日衝浪曲.mp4", "夏日衝浪曲"],
-                ["紀錄美好生活_花卉.mp4", "紀錄美好生活_花卉"],
-                ["DAILY.mp4", "DAILY"],
-                ["自拍集錦動畫.mp4", "自拍集錦動畫"],
-                ["電影開場_為夢想再出發.mp4", "電影開場_為夢想再出發"],
-                ["曲奇餅乾+數字人.mp4", "數字人+曲奇餅乾"],
-                ["數字人+紙張數據效果.mp4", "數字人+紙張數據效果"],
-                ["數字人+介紹衣服.mp4", "數字人+介紹衣服"]
-            ];
-            videos.forEach(videoPair => {
-                const videoItem = document.createElement('div');
-                videoItem.className = 'video-item';
-                videoItem.innerHTML = `
-                    <table class="video-table">
-                        <tr>
-                            <td class="video-description">
-                                <h2>${videoPair[1]}</h2> 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <video controls>
-                                    <source src="${videoPair[0]}" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </td>
-                        </tr>
-                    </table>
-                `;
-                document.querySelector('.video-container').appendChild(videoItem);
+    <table id="videoTable"></table>
+    <script>
+        const videos = [
+            ["剪映_下雪+初次音頻剪接.mp4", "圖片變動態、下雪特效", 0],
+            ["剪映_下雨+眨眼.mp4", "圖片變動態、下雨特效、聲音襯托出的緊張感", 1],
+            ["下雨+詩詞.mp4", "下雨特效、利用蒙版使圖片不那麼死板", 1],
+            ["人物摳圖+背景牆.mp4", "人物摳圖、閃白慢速轉場、圖片集合並運動的背景牆", 5],
+            ["照片下落+運鏡.mp4", "一張張的照片下落、關鍵幀的運鏡效果", 6],
+            ["旅行.mp4", "各種角度滑進的蒙版效果、搭配音樂的圖片轉場或特效", 3],
+            ["貓meme_白登&哈哈&懂王的愛恨情仇.mp4", "網上很火的貓meme動畫", 0],
+            ["女特工+卡點.mp4", "開頭是泡泡變焦特效、後續放大+旋轉卡點", 3],
+            ["夏日衝浪曲.mp4", "拉出唱片開始轉動播放效果", 0],
+            ["紀錄美好生活_花卉.mp4", "12宮格的圖片卡點效果", 1],
+            ["DAILY.mp4", "四宮格的圖片開場", 2],
+            ["自拍集錦動畫.mp4", "手機相簿的打開輪播效果", 7],
+            ["電影開場_為夢想再出發.mp4", "電影級的入場或閉幕動畫", 5],
+            ["曲奇餅乾+數字人.mp4", "數字人+餅乾的推銷影片", 0],
+            ["數字人+紙張數據效果.mp4", "數字人+紙張數據翻頁的特殊效果", 0],
+            ["數字人+介紹衣服.mp4", "數字人在店內介紹衣服", 0],
+            ["電影感片頭_對酒當歌_破碎.mp4", "電影感片頭、利用混合模式融合多種圖層", 2]
+        ];
+
+        const table = document.getElementById("videoTable");
+
+        // 循环添加每一个影片及对应的描述到表格中
+        videos.forEach(([src, desc, coverTime], index) => {
+            const row = document.createElement("tr");
+            const videoCell = document.createElement("td");
+            const video = document.createElement("video");
+            video.controls = true;
+            video.preload = "metadata"; 
+            const source = document.createElement("source");
+            source.src = src;
+            source.type = "video/mp4";
+            video.appendChild(source);
+
+            // 设置封面的时间点（以秒为单位）
+            video.addEventListener('loadedmetadata', function () {
+                video.currentTime = coverTime;
+                const canvas = document.createElement('canvas');
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                const imgData = canvas.toDataURL();
+                video.poster = imgData;
             });
-        </script>
-    </div>
+
+            videoCell.appendChild(video);
+
+            const textCell = document.createElement("td");
+            const text = document.createElement("p");
+            text.textContent = desc;
+            textCell.appendChild(text);
+
+            row.appendChild(videoCell);
+            row.appendChild(textCell);
+            table.appendChild(row);
+        });
+    </script>
 </body>
+
 </html>
