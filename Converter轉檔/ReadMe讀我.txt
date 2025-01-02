@@ -1,3 +1,5 @@
+能夠將webm或mkv轉換為mp4。
+########################
 需要先下載python-3.12.7-embed-amd64資料夾以及單獨的ffmpeg.exe，放在這個目錄中。
 另外，修改 python312._pth，前面加上：
 ../video
